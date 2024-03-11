@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javaapp
+  labels:
+    app: javaapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: javaapp
+  template:
+    metadata:
+      name: javaapp
+      labels:
+        name: javaapp
+        app: javaapp
+    spec:
+      containers:
+        - name: javaapp
+          image: prassana1132/java_app:1.0   
+          ports:
+            - containerPort: 8080
